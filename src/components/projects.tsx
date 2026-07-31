@@ -15,6 +15,13 @@ function Projects() {
             tech: ["Not Public Yet"],
             github: false,
             live: false
+        },
+        {
+            title: "AI Automated Engineering Team - Private SaaS",
+            description: "An AI Powered Engineering Team which can autonomously build fullstack web applications from scratch with just some details. The team includes multiple AI Agents, each with different roles and responsibilities.",
+            tech: ["CrewAI", "OpenAI API", "React.js", "Tailwind CSS", "Node.js", "Express.js", "FastAPI"],
+            github: false,
+            live: false
         }
     ]
 
@@ -33,7 +40,6 @@ function Projects() {
                         className="bg-zinc-900/40 hover:bg-zinc-900/70 border border-white/5 hover:border-cyan-500/20 rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/5"
                     >
                         <div>
-                            {/* Card Header Icons */}
                             <div className="flex justify-between items-center mb-6">
                                 <div className="p-3 bg-white/5 rounded-xl text-cyan-400 group-hover:text-white group-hover:bg-cyan-500 transition-all duration-300">
                                     <Folder className="w-6 h-6" />
@@ -63,7 +69,6 @@ function Projects() {
                                 </div>
                             </div>
 
-                            {/* Card Title & Desc */}
                             <h4 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
                                 {project.title}
                             </h4>
@@ -72,7 +77,6 @@ function Projects() {
                             </p>
                         </div>
 
-                        {/* Tech Stack Badges */}
                         <div className="flex flex-wrap gap-2">
                             {project.tech.map((tag, tIdx) => (
                                 <span 

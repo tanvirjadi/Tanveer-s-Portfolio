@@ -41,7 +41,6 @@ function Navbar() {
             }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-24 flex items-center justify-between">
-                {/* Logo */}
                 <a 
                     href="#top" 
                     onClick={(e) => {
@@ -53,7 +52,6 @@ function Navbar() {
                     <img src={logo} alt="Logo" className="h-10 md:h-12 w-auto object-contain" />
                 </a>
 
-                {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-8">
                     <ul className="flex items-center gap-8">
                         {links.map((link, index) => (
@@ -77,7 +75,6 @@ function Navbar() {
                     </a>
                 </div>
 
-                {/* Mobile Toggle Button */}
                 <button 
                     onClick={() => setIsOpen(!isOpen)}
                     className="lg:hidden p-2 text-zinc-400 hover:text-white rounded-lg transition-colors cursor-pointer"
@@ -87,7 +84,6 @@ function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Dropdown Menu */}
             <div 
                 className={`lg:hidden fixed top-[72px] left-0 w-full h-[calc(100vh-72px)] bg-[#0A0A0A]/95 backdrop-blur-lg border-t border-white/5 py-8 px-6 transition-all duration-350 ease-in-out ${
                     isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"

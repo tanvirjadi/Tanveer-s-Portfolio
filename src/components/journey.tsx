@@ -42,7 +42,6 @@ function Journey() {
                         key={idx} 
                         className="relative bg-zinc-900/40 border border-white/5 p-5 sm:p-6 rounded-2xl flex flex-col items-start transition-all duration-300 hover:border-violet-500/20 group hover:-translate-y-1.5"
                     >
-                        {/* Connecting Line (Only visible on lg where 4-col layout is active) */}
                         {idx < 3 && (
                             <div className="hidden lg:block absolute top-[44px] left-[76px] w-[calc(100%-48px)] h-0.5 bg-gradient-to-r from-white/10 to-transparent z-[-1]"></div>
                         )}

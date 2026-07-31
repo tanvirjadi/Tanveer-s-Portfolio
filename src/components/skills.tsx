@@ -11,11 +11,10 @@ function Skills() {
                 "JavaScript",
                 "Tailwind CSS",
                 "HTML5 / CSS3",
-                "Vite"
             ]
         },
         {
-            title: "Backend & Database",
+            title: "Backend & APIs",
             icon: <Server className="w-6 h-6 text-violet-400" />,
             skills: [
                 "Node.js",
@@ -52,7 +51,9 @@ function Skills() {
             skills: [
                 "Git / GitHub",
                 "Terminal / Bash",
-                "Figma"
+                "Antigravity IDE",
+                "Figma",
+                "Vite"
             ]
         },
         {
@@ -105,7 +106,6 @@ function Skills() {
                     ))}
                 </div>
 
-                {/* Micro badge section */}
                 <div className="mt-8 sm:mt-12 p-4 sm:p-6 bg-zinc-900/40 border border-white/5 rounded-2xl flex flex-wrap items-center justify-center gap-2 sm:gap-3">
                     <span className="text-zinc-400 text-sm flex items-center gap-2 mr-2">
                         <Sparkles className="w-4 h-4 text-amber-400" /> Also working with:

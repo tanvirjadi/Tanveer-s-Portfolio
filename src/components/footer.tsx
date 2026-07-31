@@ -8,13 +8,11 @@ function Footer() {
     return (
         <footer className="bg-zinc-950 border-t border-white/5 py-8 sm:py-12 px-4 sm:px-6 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-                {/* Copyright info */}
                 <div className="text-zinc-500 text-sm text-center md:text-left">
                     <p>&copy; {new Date().getFullYear()} Tanveer Qasim. All rights reserved.</p>
                     <p className="text-xs text-zinc-600 mt-1">Built with React, Vite & Tailwind CSS.</p>
                 </div>
 
-                {/* Socials & Scroll to Top */}
                 <div className="flex items-center gap-6">
                     <div className="flex gap-4">
                         <a 

@@ -10,12 +10,10 @@ function Contact() {
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault()
         setIsLoading(true)
-        // Simulate API call
-        // console.log("Submitted message:", formState)
         setTimeout(() => {
             try {
                 const { name, email, subject, message } = formState
-                const mailtoURL = `mailto:tanveerqasim2011@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Tanveer,\n\nYou received a new email from your website!\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`)}`
+                const mailtoURL = `mailto:tanveerqasim2011@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Hi Tanveer,\n\nYou received a new email from your website!\n\nName: ${encodeURIComponent(name)}\nEmail: ${encodeURIComponent(email)}\nSubject: ${encodeURIComponent(subject)}\n\nMessage:\n${encodeURIComponent(message)}`)}`
                 window.open(mailtoURL, "_self")
                 toast.success("Opening your default mail client...", {theme: "colored", position: "bottom-right"})
             } catch (error) {
@@ -78,7 +76,6 @@ function Contact() {
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12">
-                    {/* Left Column: Info Cards */}
                     <div className="lg:col-span-5 space-y-6">
                         <h4 className="text-2xl font-bold text-white mb-2">Contact Details</h4>
                         <p className="text-zinc-400 text-sm leading-relaxed mb-6">
@@ -105,8 +102,6 @@ function Contact() {
                             ))}
                         </div>
                     </div>
-
-                    {/* Right Column: Form */}
                     <div className="lg:col-span-7 bg-zinc-900/40 border border-white/5 rounded-2xl p-5 sm:p-6 md:p-8">
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

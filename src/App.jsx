@@ -9,10 +9,12 @@ import Timeline from "./components/timeline.tsx"
 import Journey from "./components/journey.tsx"
 import Contact from "./components/contact.tsx"
 import Footer from "./components/footer.tsx"
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   return (
     <div className="relative min-h-screen bg-[#0A0A0A] text-zinc-100 font-sans antialiased">
+      <Analytics />
       <Cursor />
       <Navbar />
       

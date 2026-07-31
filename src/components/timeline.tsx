@@ -80,11 +80,9 @@ function Timeline() {
                     <div className="h-1 w-12 bg-cyan-400 mx-auto mt-4 rounded-full"></div>
                 </div>
 
-                {/* Timeline Grid */}
                 <div className="relative border-l border-white/10 pl-6 md:pl-8 space-y-12 ml-4">
                     {milestones.map((item, idx) => (
                         <div key={idx} className="relative group">
-                            {/* Bullet indicator */}
                             <div className="absolute -left-[35px] md:-left-[43px] top-1.5 bg-zinc-950 border-2 border-cyan-500 w-5 h-5 rounded-full flex items-center justify-center group-hover:scale-125 transition-transform duration-300">
                                 <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
                             </div>

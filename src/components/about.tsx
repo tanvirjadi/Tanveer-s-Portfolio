@@ -1,4 +1,5 @@
 import { Award, FileBadge2, GraduationCap } from "lucide-react"
+import profile from "../assets/profile.png"
 
 function About() {
     const stats = [
@@ -16,12 +17,11 @@ function About() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
-                {/* Visual side */}
                 <div className="lg:col-span-5 relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-violet-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
                     <div className="relative bg-zinc-900 border border-white/10 p-6 sm:p-8 rounded-2xl flex flex-col items-center text-center">
                         <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-tr from-cyan-500 to-violet-600 flex items-center justify-center text-white text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 shadow-lg shadow-cyan-500/20">
-                            TQ
+                            <img src={profile} className="w-full h-full -scale-x-100 rounded-full" />
                         </div>
                         <h4 className="text-xl font-bold text-white mb-2">Tanveer Qasim</h4>
                         <p className="text-cyan-400 text-sm font-medium mb-4">Self-Taught Developer & Student</p>
@@ -31,7 +31,6 @@ function About() {
                     </div>
                 </div>
         
-                {/* Text and stats side */}
                 <div className="lg:col-span-7 space-y-6">
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                         Learning and building with passion and purpose.
@@ -43,7 +42,6 @@ function About() {
                         Even though I am currently in school, coding is my daily passion. I spend my spare time learning advanced backend and frontend principles, exploring API integrations, and building side projects to grow my software engineering skills.
                     </p>
 
-                    {/* Stats Grid */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-4">
                         {stats.map((stat, idx) => (
                             <div 
