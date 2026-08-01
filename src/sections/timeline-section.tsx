@@ -1,76 +1,8 @@
 import { Calendar, GraduationCap } from "lucide-react"
+import { milestones } from "../data/portfolio"
 
 function Timeline() {
-    const milestones = [
-        {
-            title: "Grade X",
-            institution: "Usman Public School",
-            location: "Karachi, Pakistan",
-            period: "2026 (Start) - Present",
-            details: [
-                "Promoted to Grade X while continuing to develop software projects.",
-                "Currently exploring neural networks and modern AI technologies.",
-                "Actively building projects and expanding my technical skills.",
-            ]
-        },
-        {
-            title: "AI & Backend Development",
-            institution: "Udemy",
-            location: "Online",
-            period: "2025 - 2026",
-            details: [
-                "Explored AI frameworks including OpenAI Agents SDK, Microsoft Autogen, LangChain, and CrewAI.",
-                "Built AI-powered applications and experimented with agentic workflows.",
-                "Continued improving backend development with Python."
-            ]
-        },
-        {
-            title: "Python Development",
-            institution: "Udemy",
-            location: "Online",
-            period: "2024 - 2025",
-            details: [
-                "Learned Python and its ecosystem for backend development and automation.",
-                "Worked with Flask, FastAPI, Pandas, and SQLite.",
-                "Built practical applications to strengthen programming fundamentals."
-            ]
-        },
-        {
-            title: "Full Stack Web Development",
-            institution: "Udemy",
-            location: "Online",
-            period: "2023 - 2024",
-            details: [
-                "Completed a comprehensive Full-Stack Web Development course.",
-                "Built full-stack applications using modern web technologies.",
-                "Earned a Udemy certificate upon course completion.",
-                "Participated in school science exhibitions and technical presentations."
-            ]
-        },
-        {
-            title: "Modern Web Development",
-            institution: "Udemy",
-            location: "Online",
-            period: "2022 - 2023",
-            details: [
-                "Learned React, Node.js, Express.js, and related technologies.",
-                "Built dynamic web applications and expanded frontend and backend skills.",
-                "Continued developing personal projects to gain hands-on experience."
-            ]
-        },
-        {
-            title: "Web Development Fundamentals",
-            institution: "Udemy",
-            location: "Online",
-            period: "2021 - 2022",
-            details: [
-                "Started learning HTML, CSS, and JavaScript.",
-                "Built interactive websites and beginner web projects.",
-                "Learned Git and began publishing projects on GitHub."
-            ]
-        }
-    ]
-
+    
     return (
         <section id="experience" className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 bg-zinc-950/40 backdrop-blur-sm border-y border-white/5 scroll-mt-20">
             <div className="max-w-4xl mx-auto">

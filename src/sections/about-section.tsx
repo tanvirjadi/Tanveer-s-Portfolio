@@ -1,13 +1,7 @@
-import { Award, FileBadge2, GraduationCap } from "lucide-react"
 import profile from "../assets/profile.png"
+import { stats } from "../data/portfolio"
 
 function About() {
-    const stats = [
-        { icon: <Award className="w-6 h-6 text-cyan-400" />, label: "Status", value: "Grade X Student" },
-        { icon: <FileBadge2 className="w-6 h-6 text-violet-400" />, label: "Certificates", value: "3+" },
-        { icon: <GraduationCap className="w-6 h-6 text-blue-400" />, label: "Learning Path", value: "Self-Taught Dev" },
-    ]
-
     return (
         <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 max-w-7xl mx-auto scroll-mt-20">
             <div className="text-center mb-16">

@@ -1,32 +1,6 @@
-import { Compass, BookOpen, Laptop, Rocket, Sparkles, Sparkle } from "lucide-react"
+import { journeySteps } from "../data/portfolio"
 
 function Journey() {
-    const steps = [
-        {
-            year: "2021",
-            icon: <Compass className="w-5 h-5 text-cyan-400" />,
-            title: "The Beginning",
-            description: "Started learning the basics of web development with HTML, CSS, and JavaScript. Built simple websites and discovered how much I enjoyed creating things with code."
-        },
-        {
-            year: "2024",
-            icon: <Rocket className="w-5 h-5 text-emerald-400" />,
-            title: "Python & Beyond",
-            description: "Started learning Python and explored backend frameworks like Flask and FastAPI. Built projects to strengthen problem-solving and programming skills."
-        },
-        {
-            year: "2025",
-            icon: <Sparkle className="w-5 h-5 text-pink-400" />,
-            title: "Exploring AI",
-            description: "Began working with AI technologies, experimenting with OpenAI APIs, LangChain, and AI agents while continuing to build full-stack applications."
-        },
-        {
-            year: "2026 & Beyond",
-            icon: <Sparkles className="w-5 h-5 text-pink-400" />,
-            title: "What's Next",
-            description: "Currently studying in Grade X while building full-stack and AI-powered projects. My focus is on creating software that solves real problems and continuously improving as a developer."
-        }
-    ]
 
     return (
         <section id="journey" className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 max-w-7xl mx-auto scroll-mt-20">
@@ -37,7 +11,7 @@ function Journey() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                {steps.map((step, idx) => (
+                {journeySteps.map((step, idx) => (
                     <div 
                         key={idx} 
                         className="relative bg-zinc-900/40 border border-white/5 p-5 sm:p-6 rounded-2xl flex flex-col items-start transition-all duration-300 hover:border-violet-500/20 group hover:-translate-y-1.5"

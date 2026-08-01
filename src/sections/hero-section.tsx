@@ -1,5 +1,5 @@
 import { ArrowRight, Download, Sparkles, Mail } from "lucide-react"
-import Glow from "./glow"
+import Glow from "../components/glow"
 
 function Hero() {
     const hours = new Date().getHours()

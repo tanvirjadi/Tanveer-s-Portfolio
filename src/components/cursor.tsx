@@ -31,7 +31,7 @@ function Cursor() {
     return (
         <div
             ref={cursorRef}
-            className="fixed pointer-events-none z-[9999] w-32 h-32 rounded-full bg-cyan-500/15 blur-3xl -translate-x-1/2 -translate-y-1/2"
+            className="fixed pointer-events-none z-[0] w-96 h-96 rounded-full bg-cyan-500/15 blur-3xl -translate-x-1/2 -translate-y-1/2"
             style={{ left: "0px", top: "0px" }}
         />
     )

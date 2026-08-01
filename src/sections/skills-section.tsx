@@ -1,75 +1,7 @@
-import { Code2, Server, Sparkles, Wrench, Key, Database as DB } from "lucide-react"
+import { skillCategories } from "../data/portfolio.tsx"
+import { Sparkles } from "lucide-react"
 
 function Skills() {
-    const skillCategories = [
-        {
-            title: "Frontend Engineering",
-            icon: <Code2 className="w-6 h-6 text-cyan-400" />,
-            skills: [
-                "React.js",
-                "TypeScript",
-                "JavaScript",
-                "Tailwind CSS",
-                "HTML5 / CSS3",
-            ]
-        },
-        {
-            title: "Backend & APIs",
-            icon: <Server className="w-6 h-6 text-violet-400" />,
-            skills: [
-                "Node.js",
-                "Express.js",
-                "Flask",
-                "FastAPI",
-                "REST APIs",
-                "OpenAI API",
-            ]
-        },
-        {
-            title: "Databases",
-            icon: <DB className="w-6 h-6 text-blue-400" />,
-            skills: [
-                "PostgreSQL",
-                "SQLite",
-            ]
-        },
-        {
-            title: "Authentication",
-            icon: <Key className="w-6 h-6 text-orange-400" />,
-            skills: [
-                "OAuth",
-                "Passport.js",
-                "Google OAuth",
-                "Authentication & Authorization",
-                "Sessions & Cookies",
-                "JWT"
-            ]
-        },
-        {
-            title: "Tools & Workflow",
-            icon: <Wrench className="w-6 h-6 text-blue-400" />,
-            skills: [
-                "Git / GitHub",
-                "Terminal / Bash",
-                "Antigravity IDE",
-                "Figma",
-                "Vite"
-            ]
-        },
-        {
-            title: "AI Agents & Automation",
-            icon: <Sparkles className="w-6 h-6 text-amber-400" />,
-            skills: [
-                "OpenAI Agents SDK",
-                "CrewAI",
-                "LangChain",
-                "Microsoft Autogen (Learning)",
-                "MCP (Learning)",
-                "Neural Networks (Learning)"
-            ]
-        }
-    ]
-
     return (
         <section id="skills" className="py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-24 bg-zinc-950/40 backdrop-blur-sm border-y border-white/5 scroll-mt-20">
             <div className="max-w-7xl mx-auto">
