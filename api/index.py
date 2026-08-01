@@ -1,12 +1,17 @@
-from .agent import AgentAsTanveer
+try:
+    from .agent import AgentAsTanveer
+    from .agent_instructions import INSTRUCTION
+    from .tools import tools
+except ImportError:
+    from agent import AgentAsTanveer
+    from agent_instructions import INSTRUCTION
+    from tools import tools
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import os
 from dotenv import load_dotenv
-from .agent_instructions import INSTRUCTION
-from .tools import tools
 load_dotenv(override=True)
 
 app = FastAPI()

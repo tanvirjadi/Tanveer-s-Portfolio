@@ -1,2 +1,4 @@
-agents
+openai-agents
 fastapi
+uvicorn
+python-dotenv
