@@ -1,3 +1,13 @@
+from pathlib import Path
+import traceback
+import uvicorn
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel
+import os
+from dotenv import load_dotenv
+
 try:
     from .agent import AgentAsTanveer
     from .agent_instructions import INSTRUCTION
@@ -6,15 +16,16 @@ except ImportError:
     from agent import AgentAsTanveer
     from agent_instructions import INSTRUCTION
     from tools import tools
-import uvicorn
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-import os
-from dotenv import load_dotenv
-load_dotenv(override=True)
+
+dotenv_path = Path(__file__).resolve().parent / ".env"
+load_dotenv(dotenv_path=dotenv_path, override=True)
 
 app = FastAPI()
+
+@app.exception_handler(Exception)
+async def all_exception_handler(request: Request, exc: Exception):
+    traceback.print_exc()
+    return JSONResponse(status_code=500, content={"error": str(exc)})
 
 class ChatRequest(BaseModel):
     message: str
