@@ -65,7 +65,7 @@ function ChatWidget() {
     const [isLoading, setIsLoading] = useState(false)
     const bottomRef = useRef<HTMLDivElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)
-    const baseURL = (import.meta as any).env.VITE_API_URL
+    // const baseURL = (import.meta as any).env.VITE_API_URL
 
     useEffect(() => {
         bottomRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -93,7 +93,7 @@ function ChatWidget() {
         setIsTyping(true)
 
         try {
-            const response = await axios.post(`${baseURL}/api/chat`, {
+            const response = await axios.post(`/api/chat`, {
                 message: userMsg.text,
             })
             setIsTyping(false)
