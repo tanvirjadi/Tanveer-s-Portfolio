@@ -1,7 +1,7 @@
 from pathlib import Path
 import traceback
 import uvicorn
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
@@ -27,6 +27,13 @@ async def all_exception_handler(request: Request, exc: Exception):
     traceback.print_exc()
     return JSONResponse(status_code=500, content={"error": str(exc)})
 
+
+def get_env_var(name: str, default: str | None = None, required: bool = False) -> str:
+    value = os.getenv(name, default)
+    if required and not value:
+        raise HTTPException(status_code=500, detail=f"Missing required environment variable: {name}")
+    return value
+
 class ChatRequest(BaseModel):
     message: str
 
@@ -45,14 +52,14 @@ app.add_middleware(
 
 @app.post("/api/chat")
 def chat(body: ChatRequest):
-    NAME = os.getenv("NAME")
-    MODEL = os.getenv("MODEL")
+    NAME = get_env_var("NAME", default="Tanveer", required=True)
+    MODEL = get_env_var("MODEL", default="gpt-5-mini", required=True)
 
     agent = AgentAsTanveer(
-        name = NAME,
-        model = MODEL,
-        instructions = INSTRUCTION,
-        tools = tools
+        name=NAME,
+        model=MODEL,
+        instructions=INSTRUCTION,
+        tools=tools,
     )
     result = agent.chat(body.message)
     return {"message": result}
