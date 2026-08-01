@@ -27,18 +27,17 @@ app.add_middleware(
     allow_headers=["Content-Type", "X-Portfolio-Token"],
 )
 
-NAME = os.getenv("NAME")
-MODEL = os.getenv("MODEL")
-
-agent = AgentAsTanveer(
-    name = NAME,
-    model = MODEL,
-    instructions = INSTRUCTION,
-    tools = tools
-)
-
 @app.post("/api/chat")
 def chat(body: ChatRequest):
+    NAME = os.getenv("NAME")
+    MODEL = os.getenv("MODEL")
+
+    agent = AgentAsTanveer(
+        name = NAME,
+        model = MODEL,
+        instructions = INSTRUCTION,
+        tools = tools
+    )
     result = agent.chat(body.message)
     return {"message": result}
 
