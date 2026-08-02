@@ -58,11 +58,11 @@ def chat(body: ChatRequest):
     agent = AgentAsTanveer(
         name=NAME,
         model=MODEL,
-        instructions=INSTRUCTION,
+        instructions=INSTRUCTION.strip(),
         tools=tools,
     )
     result = agent.chat(body.message)
     return {"message": result}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="localhost", port=8000, reload=True)
+    uvicorn.run("index:app", host="localhost", port=8000, reload=True)

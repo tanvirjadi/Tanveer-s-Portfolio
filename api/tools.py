@@ -1,6 +1,15 @@
 from agents import function_tool
-from .knowledge_base import stats, projects, contact, journey, skills, milestones, bio, next_goals, currently_learning, certificates
 import json
+import smtplib
+import os
+import dotenv
+
+try:
+    from .knowledge_base import stats, projects, contact, journey, skills, milestones, bio, next_goals, currently_learning, certificates
+except ImportError:
+    from knowledge_base import stats, projects, contact, journey, skills, milestones, bio, next_goals, currently_learning, certificates
+
+dotenv.load_dotenv(override=True)
 
 @function_tool
 def get_stats() -> str:
@@ -52,4 +61,15 @@ def get_next_goals() -> str:
     """Returns Tanveer's next goals."""
     return json.dumps(next_goals)
 
-tools = [get_stats, get_projects, get_contact, get_journey, get_skills, get_milestones, get_bio, get_certificates, get_next_goals, get_current_learning]
+@function_tool
+def inform_tanveer(message: str) -> str:
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.starttls()
+            server.login(os.getenv("EMAIL_USER"), os.getenv("EMAIL_PASS"))
+            server.sendmail(os.getenv("EMAIL_USER"), os.getenv("EMAIL_ADDRESS"), f"Subject: New Message from Tanveer's AI Assistant!\n\nBody:\nHi Tanveer!\n\n Your Portfolio's AI Assitant couldn't answer this question:\n\n{message}")
+            return "Message sent successfully."
+    except Exception as e:
+        return f"Error: {e}"
+
+tools = [get_stats, get_projects, get_contact, get_journey, get_skills, get_milestones, get_bio, get_certificates, get_next_goals, get_current_learning, inform_tanveer]
