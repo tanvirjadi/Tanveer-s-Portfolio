@@ -62,7 +62,7 @@ def chat(body: ChatRequest):
         tools=tools,
     )
     result = agent.chat(body.message)
-    return {"message": result}
+    return {"output": result}
 
 if __name__ == "__main__":
     uvicorn.run("index:app", host="localhost", port=8000, reload=True)

@@ -72,4 +72,17 @@ def inform_tanveer(message: str) -> str:
     except Exception as e:
         return f"Error: {e}"
 
-tools = [get_stats, get_projects, get_contact, get_journey, get_skills, get_milestones, get_bio, get_certificates, get_next_goals, get_current_learning, inform_tanveer]
+@function_tool
+def trigger_ui_scroll(section_id: str) -> str:
+     """
+    Triggers an immediate automated UI viewport scroll on the user's screen.
+    
+    Args:
+        section_id: The exact HTML ID target to jump to. Must be one of:
+                    'home', 'about', 'projects', 'experience', 'contact', 'journey', 'skills'
+    """
+
+     return f"SIGNAL_UI_SCROLL: {section_id}"
+    
+
+tools = [get_stats, get_projects, get_contact, get_journey, get_skills, get_milestones, get_bio, get_certificates, get_next_goals, get_current_learning, inform_tanveer, trigger_ui_scroll]

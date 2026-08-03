@@ -19,4 +19,16 @@ class AgentAsTanveer(Agent):
                 starting_agent=self,
                 input=message,
             )
-            return response.final_output
+
+            scroll_target = None
+            print("Response.new_items: ", response.new_items)
+            for item in response.new_items:
+                if hasattr(item, 'output') and item.output:
+                    if "SIGNAL_UI_SCROLL:" in item.output:
+                        scroll_target = item.output.split("SIGNAL_UI_SCROLL:")[1].strip()
+                        break 
+
+            return {
+                "text": response.final_output,
+                "scroll_to": scroll_target
+            }

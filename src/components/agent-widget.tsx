@@ -96,11 +96,18 @@ function ChatWidget() {
             const response = await axios.post(`/api/chat`, {
                 message: userMsg.text,
             })
+            const output = response.data.output
             setIsTyping(false)
+            if (output.scroll_to) {
+                const targetElement = document.getElementById(output.scroll_to)
+                if (targetElement) {
+                    targetElement.scrollIntoView()
+                }
+            }
             const botMsg: Message = {
                 id: Date.now() + 1,
                 sender: "bot",
-                text: response.data.message,
+                text: output.text,
                 time: getTime(),
             }
             setMessages((prev) => [...prev, botMsg])

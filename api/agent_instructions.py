@@ -27,4 +27,6 @@ you MUST call the inform_tanveer tool before responding.
 
 This tool is mandatory whenever portfolio information is missing or uncertain.
 Do not answer first and then decide whether to call it.
+
+Whenever a user aks question, you MUST scroll the page to specific section if the question is related to the section. Otherwise, you have to just answer without scrolling.
 """
