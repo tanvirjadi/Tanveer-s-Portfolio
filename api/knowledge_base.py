@@ -72,30 +72,7 @@ projects = [
         "live_demo": None,
         "private_project": True,
         "status": "In Development"
-    },
-    {
-        "title": "AI Automated Engineering Team - Private SaaS",
-        "purpose": "I made it to practice my coding skills.",
-        "description": (
-            "An AI-powered engineering team capable of autonomously building full-stack "
-            "web applications from a set of requirements using multiple specialized AI agents."
-        ),
-        "challenges": [
-            "There was no very hard thing to do in this project."
-        ],
-        "technologies": [
-            "CrewAI",
-            "OpenAI API",
-            "React.js",
-            "Tailwind CSS",
-            "Node.js",
-            "Express.js",
-            "FastAPI",
-        ],
-        "github": None,
-        "live_demo": None,
-        "private_project": True,
-    },
+    }
 ]
 
 contact = {
