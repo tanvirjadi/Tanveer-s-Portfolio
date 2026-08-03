@@ -22,14 +22,6 @@ const projectList = [
         github: false,
         live: false,
         privateProject: true
-    },
-    {
-        title: "AI Automated Engineering Team - Private SaaS",
-        description: "An AI Powered Engineering Team which can autonomously build fullstack web applications from scratch with just some details. The team includes multiple AI Agents, each with different roles and responsibilities.",
-        tech: ["CrewAI", "OpenAI API", "React.js", "Tailwind CSS", "Node.js", "Express.js", "FastAPI"],
-        github: false,
-        live: false,
-        privateProject: true
     }
 ]
 
