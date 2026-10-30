@@ -1,24 +1,34 @@
-# Pixel Perfect Replay
+# Tanveer Qasim — Portfolio
 
-Implement exactly the screenshot and nothing else
+Modern, interactive developer portfolio showcasing full-stack web applications, AI agents, and systems engineering.
 
-This project was built with [Lovable](https://lovable.dev).
+## Tech Stack
 
-## Build with Lovable
+- **Framework:** [TanStack Start](https://tanstack.com/start) & [TanStack Router](https://tanstack.com/router)
+- **UI & Animations:** React 19, Tailwind CSS v4, Motion (Framer Motion), Lucide Icons
+- **Deployment:** Vercel (Fluid Compute / Serverless)
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/ca5f44d3-2314-4b52-98ae-7bbc81957a7c).
+## Getting Started
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+### Prerequisites
 
-## Development
+- Node.js (v20+ recommended)
+- npm
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### Installation
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+npm install
+```
+
+### Development
+
+```bash
 npm run dev
+```
+
+### Production Build
+
+```bash
+npm run build
 ```
