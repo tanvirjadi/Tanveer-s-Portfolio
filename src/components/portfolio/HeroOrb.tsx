@@ -6,8 +6,10 @@ export function HeroOrb() {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvas = ref.current!;
-    const ctx = canvas.getContext("2d")!;
+    const canvas = ref.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const styles = getComputedStyle(document.documentElement);
     const primary = styles.getPropertyValue("--primary").trim() || "cyan";

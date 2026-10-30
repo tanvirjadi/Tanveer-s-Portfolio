@@ -29,20 +29,24 @@ export function Nav() {
   const [active, setActive] = useState("");
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(scrollY > 40);
+    if (typeof window === "undefined") return;
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
-    addEventListener("scroll", onScroll, { passive: true });
-    const io = new IntersectionObserver(
-      (es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-      { rootMargin: "-45% 0px -50% 0px" },
-    );
-    navLinks.forEach((l) => {
-      const el = document.getElementById(l.id);
-      if (el) io.observe(el);
-    });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    let io: IntersectionObserver | null = null;
+    if (typeof IntersectionObserver !== "undefined") {
+      io = new IntersectionObserver(
+        (es) => es.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+        { rootMargin: "-45% 0px -50% 0px" },
+      );
+      navLinks.forEach((l) => {
+        const el = document.getElementById(l.id);
+        if (el) io?.observe(el);
+      });
+    }
     return () => {
-      removeEventListener("scroll", onScroll);
-      io.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      io?.disconnect();
     };
   }, []);
   return (

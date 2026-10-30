@@ -3,6 +3,7 @@ import { Nav, Hero, About, Skills, Work, Services, Journey, Contact, Footer } fr
 import { Cursor } from "@/components/portfolio/fx";
 
 export const Route = createFileRoute("/")({
+  ssr: false,
   head: () => ({
     meta: [
       { title: "Tanveer Qasim — Full-Stack & AI Agents Developer" },
